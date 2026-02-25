@@ -1,3 +1,15 @@
+let firstOperand;
+let secondOperand;
+let operator;
+
+function operate(operator, a, b) {
+    if (operator === "+") return addition(a, b);
+    if (operator === "-") return subtraction(a, b);
+    if (operator === "*") return multiplication(a, b);
+    if (operator === "/") return division(a, b);
+}
+
+
 function addition(a, b) {
     return a + b;
 }
