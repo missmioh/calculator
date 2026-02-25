@@ -35,8 +35,17 @@ const display = document.querySelector("p");
 
 digitBtns.forEach((button) => {
     button.addEventListener("click", (e) => {
-        firstOperand = parseInt(e.target.id);
-        display.textContent = e.target.id;
+        if (!firstOperand) {
+            firstOperand = parseInt(e.target.id);
+            display.textContent = e.target.id;
+        } else if (firstOperand && !secondOperand) {
+            secondOperand = parseInt(e.target.id);
+            display.textContent = firstOperand + " " + operator + " " + secondOperand;
+        } else if (firstOperand && secondOperand) {
+            firstOperand = parseInt(e.target.id);
+            secondOperand = "";
+            display.textContent = e.target.id;
+        }
     });
 });
 
@@ -50,7 +59,7 @@ operatorBtns.forEach((button) => {
         };
 
         if (e.target.id === "=") {
-            display.textContent = operate(operator, firstOperand, 2);
+            display.textContent = operate(operator, firstOperand, secondOperand);
         };
     });
 });
