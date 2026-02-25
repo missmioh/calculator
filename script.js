@@ -63,3 +63,9 @@ operatorBtns.forEach((button) => {
         };
     });
 });
+
+const clearBtn = document.querySelector("#clear");
+
+clearBtn.addEventListener("click", function() {
+     display.textContent = "";
+});
