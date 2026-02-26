@@ -71,16 +71,14 @@ operatorBtns.forEach((button) => {
         };
 
         if (e.target.id === "=") {
-            if (operator && secondOperand !== 0) {
+            if ( operator === "/" && secondOperand === 0 || !secondOperand ) {
+                display.textContent = "Are you trying to crash the universe?";
+                clearAllVariables();
+            } else if (operator && secondOperand !== 0) {
                 firstOperand = operate(operator, firstOperand, secondOperand);
                 secondOperand = "";
                 operator = "";
                 display.textContent = firstOperand;
-            } else if ( operator === "/" && secondOperand === 0) {
-            display.textContent = "Are you trying to crash the universe?";
-            firstOperand = "";
-            secondOperand = "";
-            operator = "";
             }
         }
     });
@@ -90,7 +88,11 @@ const clearBtn = document.querySelector("#clear");
 
 clearBtn.addEventListener("click", function() {
      display.textContent = "";
-     firstOperand = "";
-     secondOperand = "";
-     operator = "";
+     clearAllVariables();
 });
+
+function clearAllVariables() {
+    firstOperand = "";
+    secondOperand = "";
+    operator = "";
+} 
