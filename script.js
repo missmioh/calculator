@@ -60,10 +60,10 @@ operatorBtns.forEach((button) => {
     button.addEventListener("click", (e) => {
         if (e.target.id !== "=") {
             if (firstOperand && secondOperand && operator) {
-                display.textContent = operate(operator, firstOperand, secondOperand);
-                firstOperand = parseInt(display.textContent);
+                firstOperand = operate(operator, firstOperand, secondOperand);
                 secondOperand = "";
                 operator = e.target.id;
+                display.textContent = firstOperand + operator;
             } else {
             operator = e.target.id;
             display.textContent = firstOperand + operator;
