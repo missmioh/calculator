@@ -71,8 +71,18 @@ operatorBtns.forEach((button) => {
         };
 
         if (e.target.id === "=") {
-            display.textContent = operate(operator, firstOperand, secondOperand);
-        };
+            if (operator && secondOperand !== 0) {
+                firstOperand = operate(operator, firstOperand, secondOperand);
+                secondOperand = "";
+                operator = "";
+                display.textContent = firstOperand;
+            } else if ( operator === "/" && secondOperand === 0) {
+            display.textContent = "Are you trying to crash the universe?";
+            firstOperand = "";
+            secondOperand = "";
+            operator = "";
+            }
+        }
     });
 });
 
