@@ -38,13 +38,18 @@ digitBtns.forEach((button) => {
         if (!firstOperand) {
             firstOperand = parseInt(e.target.id);
             display.textContent = e.target.id;
+        // for when the firstOperand is multi-digit
+        } else if (firstOperand && !operator) {
+            firstOperand = parseInt(firstOperand + e.target.id);
+            display.textContent = firstOperand;
+        // when entering the secondOperand after an operator
         } else if (firstOperand && operator && !secondOperand) {
             secondOperand = parseInt(e.target.id);
             display.textContent = firstOperand + operator + secondOperand;
-        } else if (firstOperand && secondOperand) {
-            firstOperand = parseInt(e.target.id);
-            secondOperand = "";
-            display.textContent = e.target.id;
+        // for multi-digit secondOperand
+        } else if (firstOperand && operator && secondOperand) {
+            secondOperand = parseInt(secondOperand + e.target.id);
+            display.textContent = firstOperand + operator + secondOperand;
         }
     });
 });
