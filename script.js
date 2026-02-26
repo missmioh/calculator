@@ -38,9 +38,9 @@ digitBtns.forEach((button) => {
         if (!firstOperand) {
             firstOperand = parseInt(e.target.id);
             display.textContent = e.target.id;
-        } else if (firstOperand && !secondOperand) {
+        } else if (firstOperand && operator && !secondOperand) {
             secondOperand = parseInt(e.target.id);
-            display.textContent = firstOperand + " " + operator + " " + secondOperand;
+            display.textContent = firstOperand + operator + secondOperand;
         } else if (firstOperand && secondOperand) {
             firstOperand = parseInt(e.target.id);
             secondOperand = "";
@@ -54,8 +54,15 @@ const operatorBtns = document.querySelectorAll(".operatorBtn");
 operatorBtns.forEach((button) => {
     button.addEventListener("click", (e) => {
         if (e.target.id !== "=") {
+            if (firstOperand && secondOperand && operator) {
+                display.textContent = operate(operator, firstOperand, secondOperand);
+                firstOperand = parseInt(display.textContent);
+                secondOperand = "";
+                operator = e.target.id;
+            } else {
             operator = e.target.id;
-            display.textContent = firstOperand + e.target.id;
+            display.textContent = firstOperand + operator;
+            }
         };
 
         if (e.target.id === "=") {
@@ -68,4 +75,7 @@ const clearBtn = document.querySelector("#clear");
 
 clearBtn.addEventListener("click", function() {
      display.textContent = "";
+     firstOperand = "";
+     secondOperand = "";
+     operator = "";
 });
