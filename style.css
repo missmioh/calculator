@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
+:root {
+    --main-color: 126, 184, 184;
+}
+
 body {
     min-height: 100vh;
     font-size: large;
@@ -11,16 +15,20 @@ body {
     justify-self: center;
 }
 
+#input-area {
+    display: flex;
+    justify-content: flex-start;
+}
+
 #digits {
     display: flex;
     flex-wrap: wrap;
+    flex: 3;
 }
 
 #operators {
-    flex: 1;
-}
-
-#id {
+    display: flex;
+    flex-wrap: wrap;
     flex: 1;
 }
 
@@ -28,14 +36,24 @@ body {
     border: solid 2px black;
     border-radius: 10px;
     flex: 1;
+    background-color: rgb(var(--main-color), 0.5);
     padding: 10px;
+    min-height: 57px;
+    margin-bottom: 10px;
 }
 
 button {
     border-radius: 5px;
-    background-color: rgb(126, 184, 184);
+    background-color: rgb(var(--main-color));
     margin: 5px;
-    padding: 10px;
+    padding: 20px;
+    font-weight: bold;
+    height: 60px;
+    aspect-ratio: 1 / 1; 
+}
+
+button#clear {
+    width: 200px;
 }
 
 h1 {
