@@ -2,6 +2,9 @@ let firstOperand;
 let secondOperand;
 let operator;
 
+// checks if the first variable is complete so no new numbers will be added (!12+2 = 122)
+let resultTracker;
+
 // the math
 
 function operate(operator, a, b) {
@@ -35,9 +38,20 @@ const display = document.querySelector("p");
 
 digitBtns.forEach((button) => {
     button.addEventListener("click", (e) => {
+        // stores first operand
         if (!firstOperand) {
             firstOperand = parseInt(e.target.id);
             display.textContent = e.target.id;
+        // resets calculator if no new operator is chosen after result
+        } else if (resultTracker && !operator) {
+            clearAllVariables();
+            firstOperand = parseInt(e.target.id);
+            display.textContent = e.target.id;
+        // removes tracker so business can go an as usual
+        } else if (resultTracker && operator) {
+            resultTracker = "";
+            secondOperand = parseInt(e.target.id);
+            display.textContent = firstOperand + operator + secondOperand;
         // for when the firstOperand is multi-digit
         } else if (firstOperand && !operator) {
             firstOperand = parseInt(firstOperand + e.target.id);
@@ -64,6 +78,7 @@ operatorBtns.forEach((button) => {
                 secondOperand = "";
                 operator = e.target.id;
                 display.textContent = firstOperand + operator;
+                resultTracker = true;
             } else {
             operator = e.target.id;
             display.textContent = firstOperand + operator;
@@ -79,6 +94,7 @@ operatorBtns.forEach((button) => {
                 secondOperand = "";
                 operator = "";
                 display.textContent = firstOperand;
+                resultTracker = true;
             }
         }
     });
@@ -95,4 +111,5 @@ function clearAllVariables() {
     firstOperand = "";
     secondOperand = "";
     operator = "";
+    resultTracker = "";
 } 
