@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
 :root {
-    --main-color: 126, 184, 184;
+    --main-color: 178, 114, 160;
+    --accent-color: 148, 99, 150;
+    /* color: rgb(148, 99, 150); */
 }
 
 body {
     min-height: 100vh;
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(246, 249, 255);
 }
 
 #container {
@@ -33,23 +36,29 @@ body {
 }
 
 #display {
-    border: solid 2px black;
-    border-radius: 10px;
     flex: 1;
-    background-color: rgb(var(--main-color), 0.5);
+    border: solid 2px rgb(var(--main-color));
+    box-shadow: -2px 0 rgb(166, 215, 255), 0 2px rgb(155, 255, 152), 2px 0 rgb(255, 255, 157), 0 -2px rgb(225, 142, 142);
+    border-radius: 10px;
+    background-color: rgb(var(--main-color), 0.3);
     padding: 10px;
     min-height: 57px;
     margin-bottom: 10px;
+    font-family: 'Silkscreen', sans-serif;
+    color: rgb(var(--accent-color));
 }
 
 button {
     border-radius: 5px;
-    background-color: rgb(var(--main-color));
+    border-color: white;
+    background-color: rgba(var(--main-color), 0.5);
     margin: 5px;
     padding: 20px;
     font-weight: bold;
+    color: rgb(var(--accent-color));
     height: 60px;
     aspect-ratio: 1 / 1; 
+    box-shadow: -2px 0 rgb(166, 215, 255), 0 2px rgb(155, 255, 152), 2px 0 rgb(255, 255, 157), 0 -2px rgb(225, 142, 142);
 }
 
 button#clear {
@@ -59,5 +68,7 @@ button#clear {
 h1 {
     font-family: 'Silkscreen', sans-serif;
     text-align: center;
+    color: rgb(var(--main-color));
+    text-shadow:  -2px 0 rgb(166, 215, 255), 0 2px rgb(155, 255, 152), 2px 0 rgb(255, 255, 157), 0 -2px rgb(225, 142, 142);
 }
 
