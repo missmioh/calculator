@@ -11,7 +11,10 @@ function operate(operator, a, b) {
     if (operator === "+") return addition(a, b);
     if (operator === "-") return subtraction(a, b);
     if (operator === "*") return multiplication(a, b);
-    if (operator === "/") return division(a, b);
+    if (operator === "/") {
+        let result = division(a, b);
+        return parseFloat(result.toFixed(5));
+    }
 };
 
 
