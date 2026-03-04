@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+body {
+    min-height: 100vh;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#container {
+    width: 300px;
+    justify-self: center;
+}
+
+#digits {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#operators {
+    flex: 1;
+}
+
+#id {
+    flex: 1;
+}
+
+#display {
+    border: solid 2px black;
+    border-radius: 10px;
+    flex: 1;
+    padding: 10px;
+}
+
+button {
+    border-radius: 5px;
+    background-color: rgb(126, 184, 184);
+    margin: 5px;
+    padding: 10px;
+}
+
+h1 {
+    font-family: 'Silkscreen', sans-serif;
+    text-align: center;
+}
+
