@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
 :root {
-    --main-color: 178, 114, 160;
-    --accent-color: 148, 99, 150;
+    --main-color: 253, 96, 168;
+    --light-color: 253, 163, 195;
+    --accent-color: 252, 34, 134;
 }
 
 body {
@@ -61,13 +62,13 @@ body {
 }
 
 #display:hover {
-    /* transform: scale(120%); */
+    transform: scale(120%);
 }
 
 button {
     border-radius: 5px;
     border-color: white;
-    background-color: rgba(var(--main-color), 0.5);
+    background-color: rgb(var(--light-color));
     margin: 5px;
     padding: 20px;
     font-weight: bold;
@@ -101,17 +102,17 @@ h1 {
 
 h1:hover {
     color: rgb(var(--accent-color));
-    /* transform: scale(120%); */
+    transform: scale(120%);
 }
 
 .icon {
     height: 50px;
     position: absolute;
-    margin-left: 20rem;
+    margin-left: 28rem;
 }
 
 .icon:hover {
-    /* transform: scale(120%); */
+    transform: scale(140%);
 }
 
 a {
