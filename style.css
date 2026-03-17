@@ -60,6 +60,10 @@ body {
     color: rgb(var(--accent-color));
 }
 
+#display:hover {
+    /* transform: scale(120%); */
+}
+
 button {
     border-radius: 5px;
     border-color: white;
@@ -97,4 +101,24 @@ h1 {
 
 h1:hover {
     color: rgb(var(--accent-color));
+    /* transform: scale(120%); */
+}
+
+.icon {
+    height: 50px;
+    position: absolute;
+    margin-left: 20rem;
+}
+
+.icon:hover {
+    /* transform: scale(120%); */
+}
+
+a {
+    color: rgb(var(--main-color));
+    font-size: 0.5rem;
+}
+
+#credits {
+    text-align: center;
 }
