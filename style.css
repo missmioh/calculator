@@ -3,7 +3,6 @@
 :root {
     --main-color: 178, 114, 160;
     --accent-color: 148, 99, 150;
-    /* color: rgb(148, 99, 150); */
 }
 
 body {
@@ -11,6 +10,18 @@ body {
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: rgb(246, 249, 255);
+}
+
+@keyframes spinIt {
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 #container {
@@ -45,6 +56,7 @@ body {
     min-height: 57px;
     margin-bottom: 10px;
     font-family: 'Silkscreen', sans-serif;
+    text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
     color: rgb(var(--accent-color));
 }
 
@@ -55,14 +67,25 @@ button {
     margin: 5px;
     padding: 20px;
     font-weight: bold;
+    font-size: 1.25rem;
     color: rgb(var(--accent-color));
     height: 60px;
     aspect-ratio: 1 / 1; 
     box-shadow: -2px 0 rgb(166, 215, 255), 0 2px rgb(155, 255, 152), 2px 0 rgb(255, 255, 157), 0 -2px rgb(225, 142, 142);
+    animation: spinIt 1s linear;
+    animation-play-state: paused;
 }
 
 button#clear {
     width: 200px;
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 1rem;
+    text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
+}
+
+button:hover {
+    animation-play-state: running;
+    animation-fill-mode: forwards;
 }
 
 h1 {
@@ -72,3 +95,6 @@ h1 {
     text-shadow:  -2px 0 rgb(166, 215, 255), 0 2px rgb(155, 255, 152), 2px 0 rgb(255, 255, 157), 0 -2px rgb(225, 142, 142);
 }
 
+h1:hover {
+    color: rgb(var(--accent-color));
+}
